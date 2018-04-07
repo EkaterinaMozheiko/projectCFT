@@ -1,0 +1,6 @@
+/*var elements = document.querySelectorAll('*');
+var randomElement = Math.random(elements);
+
+document.getElementsByTagName(randomElement).style.backgroundColor = 'red';
+
+*/
