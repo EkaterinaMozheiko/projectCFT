@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Заказ - шаг 1</title>
+		<link rel = "stylesheet" href = "css/style.css" type="text/css">
+	</head>
+	<body>
+			<div class="basket-header">
+				<div class="circle circle_border_blue">1</div>
+				<div class="line line_gray"></div>
+				<div class="circle circle_border_gray">2</div>
+				<div class="line line_gray"></div>
+				<div class="circle circle_border_gray">3</div>
+				<div class="line line_gray"></div>
+				<div class="circle circle_border_gray">4</div>
+			</div>
+			<div class="basket-wrapper">
+				<table class="basket-table">
+					<tr class="basket-table__row">
+						<th class="basket-table__header-text">Приложение</th>
+						<th class="basket-table__header-text">Стоимость</th>
+						<th class="basket-table__header-text">Итог</th>
+					</tr>
+					<tr class="basket-table__row">
+						<td class="basket-table_cell-header">
+							<img class="table-image" src="assets/image/shot-2.jpg" width="116" height="87" alt="phone">
+							<div class="table_cell-wrapper">
+								<div class="checkbox-wrapper">
+									<h2 class="basket-table__header">Новый ЦФТ-банк</h2>
+									<input class="checkbox checkbox_enabled" id="checkbox-1" type="checkbox">
+									<label class="label label_enabled pseudo-checkbox_enabled" for="checkbox-1">установка и настройка
+									</label>
+								</div>
+							</div>
+						</td>
+						<td>
+						<div class="value-wrapper">
+							<div class="total-sum total-sum_padding-right_95">$139,99</div>
+							<div class="counter">
+								<button class="button_round">
+									<svg class="icon-round-button"><use xlink:href="#minus"></svg>
+								</button>
+								<div class="counter__label">1</div>
+								<button class="button_round">
+									<svg class="icon-round-button"><use xlink:href="#plus">
+									</svg>
+								</button>
+							</div>
+						</div>
+						</td>
+						<td>
+							<div class="total-sum total-sum_last">$139,99</div>
+							<button class="delete-button">
+								<svg class="delete"><use xlink:href="#delete"></svg>
+							</button>
+						</td>
+					</tr>
+					<tr class="basket-table__row">
+						<td class="basket-table_cell-header">
+							<img class="table-image" src="assets/image/shot-2.jpg" width="116" height="87" alt="phone">
+							<div class="table_cell-wrapper">
+								<h2 class="basket-table__header">Новый ЦФТ-банк</h2>
+								<div class="checkbox-wrapper">
+									<input class="checkbox checkbox_enabled" id="checkbox-2" type="checkbox">
+									<label class="label label_enabled pseudo-checkbox_enabled" for="checkbox-2">установка и настройка
+									</label>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="value-wrapper">
+								<div class="total-sum total-sum_padding-right_95">$139,99</div>
+								<div class="counter">
+									<button class="button_round">
+										<svg class="icon-round-button"><use xlink:href="#minus">
+										</svg>
+									</button>
+									<div class="counter__label">1</div>
+									<button class="button_round">
+										<svg class="icon-round-button"><use xlink:href="#plus">
+										</svg>
+									</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="total-sum total-sum_last">$139,99</div>
+							<button class="delete-button">
+								<svg class="delete"><use xlink:href="#delete"></svg>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="sum">
+				<div class="total-sum total-sum_big">$549
+					<div class="total-sum total-sum_small">99</div>
+				</div>
+				<button class="button button_blue">Заказать</button>
+			</div>
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<symbol id="arrow" viewBox="0 0 10 6">
+				<path fill="#1E8BC3" fill-rule="evenodd" d="M9.143.571A.575.575 0 0 0 8.57 0h-8A.575.575 0 0 0 0 .571c0 .152.063.295.17.402l4 4c.107.107.25.17.401.17a.568.568 0 0 0 .402-.17l4-4a.568.568 0 0 0 .17-.402z"/>
+			</symbol>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<symbol id="minus" viewBox="0 0 10 3">
+				<path fill="#1E8BC3" fill-rule="evenodd" d="M.884 1.456c0-.422.341-.763.762-.762h7.62a.761.761 0 1 1 0 1.524h-7.62a.762.762 0 0 1-.762-.762z"/>
+
+			</symbol>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<symbol id="plus" viewBox="0 0 10 10">
+				<path fill="#1E8BC3" fill-rule="evenodd" d="M3.81 3.81H.762a.761.761 0 1 0 0 1.523H3.81v3.048a.761.761 0 1 0 1.523 0V5.333h3.048a.761.761 0 1 0 0-1.524H5.333V.762a.761.761 0 1 0-1.523 0v3.047z"/>
+			</symbol>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<symbol id="delete" viewBox="0 0 16 16">
+				<g fill="none" fill-rule="evenodd">
+					<path fill="#868686" d="M9.506 8.153l1.329 1.329a.96.96 0 0 1-1.357 1.358l-1.33-1.329-1.442 1.442a.999.999 0 1 1-1.414-1.414l1.442-1.442-1.329-1.33A.959.959 0 1 1 6.762 5.41l1.33 1.329 1.442-1.443a1 1 0 0 1 1.414 1.415L9.506 8.153z"/>
+					<circle cx="7" cy="7" r="6.533" stroke="#9C9C9C" transform="translate(1 1)"/>
+				</g>
+			</symbol>
+		</svg>
+	</body>
+</html>
