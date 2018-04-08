@@ -5,14 +5,16 @@
 }
 
 html, body {
-	width: 100%;
-	min-height: 100%;
+	min-width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 body {
 	font-family: 'Arial', arial, sans-serif;
 	font-size: 16px;
 	color: #000000;
+	background-color: #f1f1f1;
 }
 
 :focus {
@@ -22,7 +24,9 @@ body {
 .background-wrapper {
 	width: 100%;
 	min-height: 100%;
-	background-color: #f1f1f1;
+	background-color: white;
+	position: absolute;
+	top: 0;
 }
 
 .header {
@@ -91,11 +95,13 @@ body {
 	top: 39px;
 	padding: 11px 40px 13px 18px; 
 	vertical-align: middle;
-	background: #ffffff url(assets/image/loupe.svg) no-repeat 95% 50%;
+	background: #ffffff url(image/loupe.svg) no-repeat 95% 50%;
 }
 
-.input::-webkit-input-placeholder, .input::-moz-placeholder,
-.input:-moz-placeholder, .input:-ms-input-placeholder {
+.input::-webkit-input-placeholder,
+.input::-moz-placeholder,
+.input:-moz-placeholder,
+.input:-ms-input-placeholder {
 	font-family: 'Arial', arial, sans-serif;
 	font-size: 14px;
 	color: #c3c3c3;
@@ -410,6 +416,7 @@ body {
 
 .content__image {
 	float: right;
+	padding-left: 51px;
 }
 
 .content__wrapper:after {
@@ -457,10 +464,14 @@ body {
 }
 
 .button_white {
-	width: 188px;
+	width: 167px;
 	background-color: #ffffff;
 	border: solid 1px #e5e5e5;
 	color: #2c3239;
+}
+
+.button_width_188px {
+	width: 188px;
 }
 
 .button_blue:hover {
@@ -604,6 +615,9 @@ body {
 	border: solid 1px #e5e5e5;
 	border-radius: 100%;
 	vertical-align: middle;
+}
+
+.pseudo-radio_enabled {
 	margin-top: 13px;
 }
 
@@ -621,7 +635,7 @@ body {
 }
 
 .checkbox_enabled:checked + .pseudo-checkbox_enabled:before  {
-	background: #1e8bc3 url(assets/image/path.svg) no-repeat 50% 50%;
+	background: #1e8bc3 url(image/path.svg) no-repeat 50% 50%;
 }
 
 .radio_enabled:checked + .pseudo-radio_enabled:before {
@@ -735,6 +749,7 @@ body {
 }
 
 .pay-form {
+	min-width: 1200px;
 	padding-top: 154px;
 }
 
@@ -756,8 +771,8 @@ body {
 
 .pay-form__card_up {
 	position: absolute;
-	left: 430px;
-	top: 250px;
+	right: 116px;
+	bottom: 32px;
 	z-index: 2;
 	padding: 32px 0 0 25px;
 }
@@ -773,6 +788,10 @@ body {
 
 .button_margin-right_470 {
 	margin-right: 470px;
+}
+
+.content-form {
+	min-width: 1200px;
 }
 
 .input-form {
@@ -812,6 +831,7 @@ body {
 
 .input-field_width_320 {
 	width: 320px;
+	margin-right: 18px;
 }
 
 .input-field_width_301 {
@@ -820,6 +840,7 @@ body {
 
 .input-field_width_207 {
 	width: 207px;
+	margin-right: 18px;
 }
 
 .input-field_width_248 {

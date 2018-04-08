@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset = "UTF-8">
-		<title>Заказ - шаг 3</title>
-		<link rel = "stylesheet" href = "css/style.css" type="text/css">
-	</head>
-	<body>
-			<div class="basket-header">
-				<div class="circle">
-					<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
-				</div>
-				<div class="line"></div>
-				<div class="circle">
-					<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
-				</div>
-				<div class="line"></div>
-				<div class="circle circle_border_blue">3</div>
-				<div class="line line_gray"></div>
-				<div class="circle circle_border_gray">4</div>
+<head>
+	<meta charset = "UTF-8">
+	<title>Заказ - шаг 3</title>
+	<link rel = "stylesheet" href = "css/style.css" type="text/css">
+</head>
+<body>
+	<div class="background-wrapper">
+		<div class="basket-header">
+			<div class="circle">
+				<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
 			</div>
-			<div class="content-form">
-				<div class="input-form">
-					<div class="contact-header">Контактная информация</div>
-					<input class="input-field input-field_width_320" type="text" placeholder="Фамилия">
-					<input class="input-field input-field_width_301" type="text" placeholder="Имя Отчество"><br>
-					<input class="input-field input-field_width_320" type="text" placeholder="Номер телефона">
-					<input class="input-field input-field_width_301" type="text" placeholder="E-mail"> <br>
-					<input class="input-field input-field_width_207" type="text" placeholder="Организация">
-					<input class="input-field input-field_width_207" type="text" placeholder="ИНН">
-					<input class="input-field input-field_width_187" type="text" placeholder="Город">
-				</div>
-				<div class="radio-group">
-					<input class="radio radio_enabled" name="basket-radio" id="radio-1" type="radio">
-					<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-1">Быстрая установка</label><br>
-					<input class="radio radio_enabled" name="basket-radio" id="radio-2" type="radio">
-					<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-2">Отложенная установка</label><br>
-					<button class="button button_blue radio-group_button">Отправить</button>
-				</div>
+			<div class="line"></div>
+			<div class="circle">
+				<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
 			</div>
-			<svg xmlns="http://www.w3.org/2000/svg">
-				<symbol id="checkmark" viewBox="0 0 9 6">
-					<path fill-rule="evenodd" d="M8.32.251a.856.856 0 0 1 0 1.212L4.035 5.75a.855.855 0 0 1-1.212 0L.25 3.178a.856.856 0 1 1 1.212-1.212L3.43 3.93 7.109.25a.856.856 0 0 1 1.211 0z"/>
-			</symbol>
-			</svg>
-		</body>
+			<div class="line"></div>
+			<div class="circle circle_border_blue">3</div>
+			<div class="line line_gray"></div>
+			<div class="circle circle_border_gray">4</div>
+		</div>
+		<div class="content-form">
+			<div class="input-form">
+				<div class="contact-header">Контактная информация</div>
+				<input class="input-field input-field_width_320" type="text" placeholder="Фамилия">
+				<input class="input-field input-field_width_301" type="text" placeholder="Имя Отчество"><br>
+				<input class="input-field input-field_width_320" type="text" placeholder="Номер телефона">
+				<input class="input-field input-field_width_301" type="text" placeholder="E-mail"> <br>
+				<input class="input-field input-field_width_207" type="text" placeholder="Организация">
+				<input class="input-field input-field_width_207" type="text" placeholder="ИНН">
+				<input class="input-field input-field_width_187" type="text" placeholder="Город">
+			</div>
+			<div class="radio-group">
+				<input class="radio radio_enabled" name="basket-radio" id="radio-1" type="radio">
+				<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-1">Быстрая установка</label><br>
+				<input class="radio radio_enabled" name="basket-radio" id="radio-2" type="radio">
+				<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-2">Отложенная установка</label><br>
+				<button class="button button_blue radio-group_button">Отправить</button>
+			</div>
+		</div>
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<symbol id="checkmark" viewBox="0 0 9 6">
+			<path fill-rule="evenodd" d="M8.32.251a.856.856 0 0 1 0 1.212L4.035 5.75a.855.855 0 0 1-1.212 0L.25 3.178a.856.856 0 1 1 1.212-1.212L3.43 3.93 7.109.25a.856.856 0 0 1 1.211 0z"/>
+		</symbol>
+	</svg>
+</body>
 </html>
