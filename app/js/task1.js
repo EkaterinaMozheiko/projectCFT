@@ -1,14 +1,24 @@
-const elements = document.getElementsByTagName('*'),
+const elements = document.getElementsByTagName('*'), 
 	TIME_INTERVAL = 2000;
 
 function getRandomElement(elementsArr) {
-	var randomElement = elementsArr[Math.floor(Math.random() * elementsArr.length)];
+	return randomElement = elementsArr[Math.floor(Math.random() * elementsArr.length)];
+}
+
+function setBackground() {
+	var randomElement = getRandomElement(elements)
 	var randomColor = '#' + Math.random().toString(16).slice(-6);
 	randomElement.style.backgroundColor = randomColor;
 	return;
 }
 
-var timeId = setInterval('getRandomElement(elements)', TIME_INTERVAL);
+function clearBackground() {
+	var randomElement = getRandomElement(elements);
+	randomElement.style.backgroundColor = 'transparent';
+}
+
+var timeId = setInterval('setBackground()', TIME_INTERVAL);
+var timeId2 = setInterval('clearBackground()', TIME_INTERVAL);
 
 
 
