@@ -39,12 +39,11 @@ let blockList = [
  ];
 
 for (var i = 0; i < 3; i++) {
-	var myTemplate = document.querySelector('#my-template').content.cloneNode(true),
+	var template = document.querySelector('#my-template').content.cloneNode(true),
 	randomNum = Math.floor(Math.random() * 7); 
 
-	myTemplate.querySelector('img').src = 'assets/imageTask3/' + blockList[randomNum].image;
-	myTemplate.querySelector('.main-logo__header').innerText = blockList[randomNum].header;
-	myTemplate.querySelector('.date').innerText = blockList[randomNum].date;
-	parent.appendChild(myTemplate);
+	template.querySelector('img').src = 'assets/imageTask3/' + blockList[randomNum].image;
+	template.querySelector('.main-logo__header').innerText = blockList[randomNum].header;
+	template.querySelector('.date').innerText = blockList[randomNum].date;
+	parent.appendChild(template);
 }
-
