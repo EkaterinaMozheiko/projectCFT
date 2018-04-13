@@ -38,27 +38,13 @@ let blockList = [
  	}
  ];
 
- for (let i = 0; i < 3; i++) {
-	var block = document.createElement('div');
-	var image = document.createElement('img');
-	var header = document.createElement('h3');
-	var date = document.createElement('div');
+for (var i = 0; i < 3; i++) {
+	var myTemplate = document.querySelector('#my-template').content.cloneNode(true),
+	randomNum = Math.floor(Math.random() * 7); 
 
-	randomNum = Math.floor(Math.random() * 7);
-	block.classList.add('main-logo__item', 'main-logo__item_shot' + i); 
-
-	image.src = 'assets/imageTask3/' + blockList[randomNum].image;
-	image.setAttribute('width', '330');
-	image.setAttribute('height', '198');
-
-	header.classList.add('main-logo__header');
-	header.innerHTML = blockList[randomNum].header;
-
-	date.classList.add('date');
-	date.innerHTML = blockList[randomNum].date;
-
-	parent.appendChild(block);
-	block.appendChild(image);
-	block.appendChild(header);
-	block.appendChild(date);
+	myTemplate.querySelector('img').src = 'assets/imageTask3/' + blockList[randomNum].image;
+	myTemplate.querySelector('.main-logo__header').innerText = blockList[randomNum].header;
+	myTemplate.querySelector('.date').innerText = blockList[randomNum].date;
+	parent.appendChild(myTemplate);
 }
+
