@@ -10,8 +10,9 @@
 		<div class="header__wrapper">
 			<div class="header__logo"><svg class="logo"><use xlink:href="#logo"/></svg></div>
 			<nav class="header__menu">
-				<a class="header__item" href ="index.html">Главная</a>
-				<a class="header__item" href ="catalog.html">Каталог приложений</a>
+				<a class="header__item active" href ="index.html">Главная</a>
+				<!--<a class="header__item" href ="catalog.html">Каталог приложений</a>-->
+				<a class="header__item" href ="new_cft_bank.html">Каталог приложений</a>
 				<a class="header__item" href ="">О компании</a>
 			</nav>
 		</div>
@@ -22,21 +23,71 @@
 			<input class="input" placeholder="Поиск приложения">
 		</div>
 		<div id = "applications" class="main-logo">
-			<!--<div class="main-logo__item main-logo__item_shot1">
-				<img src="assets/image/shot-1.jpg" width="330" height="198" alt="shot-1">
-				<h3 class="main-logo__header">Стандартный пакет</h3>
-				<div class="date">08 апреля 2012</div>
+			<div id="slider" class="slider-wrapper">
+				<button id = "prev" class="main__slider-button" onclick="sliderLeft()"></button>
+				<div id="slider-block" class="slider">
+					<template id="my-template">
+						<div id = "main-logo__item" class="main-logo__item main-logo__item_shot1">
+							<img width="330" height="198">
+							<h3 class="main-logo__header"></h3>
+							<div class="date"></div>
+						</div>
+					</template>
+					<!--<div class="main-logo__item main-logo__item_shot1">
+						<img src="assets/imageTask3/shot-1.jpg" width="330" height="198" alt="shot-1">
+						<h3 class="main-logo__header">Стандартный пакет</h3>
+						<div class="date">08 апреля 2012</div>
+					</div>
+					<div class="main-logo__item main-logo__item_shot2">
+						<img src="assets/imageTask3/shot-2.jpg" width="330" height="198" alt="phone">
+						<h3 class="main-logo__header">Новый ЦФТ-банк</h3>
+						<div class="date">09 сентября 2016</div>
+					</div>
+					<div class="main-logo__item main-logo__item_shot3">
+						<img src="assets/imageTask3/shot-3.jpg" width="330" height="198" alt="shot-3">
+						<h3 class="main-logo__header">Каталог разработок</h3>
+						<div class="date">03 марта 2015</div>
+					</div>
+					<div class="main-logo__item main-logo__item_shot4">
+						<img src="assets/imageTask3/shot-4.png" width="330" height="198" alt="shot-1">
+						<h3 class="main-logo__header">Мобильный сбербанк</h3>
+						<div class="date">08 апреля 2012</div>
+					</div>
+					<div class="main-logo__item main-logo__item_shot5">
+						<img src="assets/imageTask3/shot-5.jpg" width="330" height="198" alt="phone">
+						<h3 class="main-logo__header">Новый ЦФТ-банк</h3>
+						<div class="date">09 сентября 2016</div>
+					</div>
+					<div class="main-logo__item main-logo__item_shot6">
+						<img src="assets/imageTask3/shot-6.jpg" width="330" height="198" alt="phone">
+						<h3 class="main-logo__header">Опять Сбербанк</h3>
+						<div class="date">28 января 2010</div>
+					</div>
+					<div class="main-logo__item main-logo__item_shot7">
+						<img src="assets/imageTask3/shot-7.jpg" width="330" height="198" alt="phone">
+						<h3 class="main-logo__header">ВТБ</h3>
+						<div class="date">01 марта 2017</div>
+					</div>-->
+				</div>
+				<button id="next" class="main__slider-button main__slider-button_next" onclick="sliderRight()"></button>
 			</div>
-			<div class="main-logo__item main-logo__item_shot2">
-				<img src="assets/image/shot-2.jpg" width="330" height="198" alt="phone">
-				<h3 class="main-logo__header">Новый ЦФТ-банк</h3>
-				<div class="date">09 сентября 2016</div>
+			<div class=main__slider-radio_form>
+				  <input id="dot1" name = "dot" class="dot" type = "radio" onclick="showImage(0)"></input> 
+				  <input id="dot2" name = "dot" class="dot" type = "radio" onclick="showImage(362)"></input> 
+				  <input id="dot3" name = "dot" class="dot" type = "radio" onclick="showImage(724)"></input> 
+				  <input id="dot4" name = "dot" class="dot" type = "radio" checked onclick="showImage(1086)"></input>
+				  <input id="dot5" name = "dot" class="dot" type = "radio" onclick="showImage(1448)"></input>
+				  <input id="dot6" name = "dot" class="dot" type = "radio" onclick="showImage(1810)"></input> 
+				  <input id="dot7" name = "dot" class="dot" type = "radio" onclick="showImage(2172)"></input>
 			</div>
-			<div class="main-logo__item main-logo__item_shot3">
-				<img src="assets/image/shot-3.jpg" width="330" height="198" alt="shot-3">
-				<h3 class="main-logo__header">Каталог разработок</h3>
-				<div class="date">03 марта 2015</div>
-			</div>-->
+			<!--<template id="my-template">
+				<div id = "main-logo__item" class="main-logo__item main-logo__item_shot1">
+					<img width="330" height="198" alt="shot-1">
+					<h3 class="main-logo__header"></h3>
+					<div class="date"></div>
+				</div>
+			</template>
+			-->
 		</div>
 		<div class="info-block">
 			<div class="info-block__part">
@@ -115,7 +166,7 @@
 		<path fill="#D6D8D9" fill-rule="evenodd" d="M3.704 8.198c.486 1.57 1.105 2.256 3.167 2.976 2.064.718 3.044 1.504 3.853 1.504.809 0 1.728-.687 3.79-1.407 2.064-.72 1.513-.939 2-2.509l-5.79 2.245-7.02-2.81zm16.99-4.096L11.967.207c-.684-.305-1.803-.305-2.487 0L.754 4.102c-.683.305-.683.804 0 1.11L9.48 9.106c.684.305 1.803.305 2.486 0l5.642-2.519-6.117-1.142a4.028 4.028 0 0 1-.767.072c-1.102 0-1.995-.423-1.995-.945 0-.524.894-.947 1.995-.947.856 0 1.583.257 1.866.614l6.48 1.695 1.623-.724c.683-.305.683-.804 0-1.11zm-2.667 7.381c-.068.322 1.345.85 1.479-.09.607-4.237-.436-5.456-.436-5.456l-1.462.652s1.24.94.419 4.894z"/>
 		</symbol>
 	</svg>
-	<!--<script type="text/javascript" src="js/task1.js"></script>-->
-	<script type="text/javascript" src="js/task2.js"></script>
+	<script type="text/javascript" src="js/task3.js"></script>
+	<!--<script type="module" src="js/index.js"></script>-->
 </body>
 </html>

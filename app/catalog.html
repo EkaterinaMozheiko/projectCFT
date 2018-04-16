@@ -19,8 +19,13 @@
 	<div class="menu-wrapper">
 		<nav class="menu">
 			<h2 class="menu__header menu__header_lined">Каталог приложений</h2>
-			<ul class="menu__list">
-				<li class="menu__item">
+			<ul id = "menu-list" class="menu__list">
+				<template id="menu-template">
+					<li class="menu__item">
+						<a class="menu__link" href=""></a>
+					</li>
+				</template>
+				<!--<li class="menu__item">
 					<a class="menu__link" href="">Стандартный пакет</a>
 				</li>
 				<li class="menu__item">
@@ -61,7 +66,7 @@
 				</li>
 				<li class="menu__item">
 					<a class="menu__link" href="">Инвестиции</a>
-				</li>
+				</li>-->
 			</ul>
 		</nav>
 		<section class="content">
@@ -74,7 +79,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -85,7 +90,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -96,7 +101,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -107,7 +112,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -118,7 +123,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -129,7 +134,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -140,7 +145,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -151,7 +156,7 @@
 				</tr>
 				<tr class="content__table-row">
 					<td class="content__table-item">
-						<img class="table-image" src="assets/image/shot-2.jpg" width="80" height="60" alt="phone">
+						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
 						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
 						<div class="content__table-date">09 сентября 2009 года</div>
 					</td>
@@ -183,5 +188,6 @@
 			</g>
 		</symbol>
 	</svg>
+	<script type="text/javascript" src="js/catalog_aiax.js"></script>
 </body>
 </html>

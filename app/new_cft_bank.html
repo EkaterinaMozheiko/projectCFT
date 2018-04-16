@@ -5,13 +5,13 @@
 	<title>Новый ЦФТ-банк</title>
 	<link rel = "stylesheet" href = "css/style.css" type="text/css">
 </head>
-<body>
+<body onload="getContentPackage(0)">
 	<header class="header">
 		<div class="header__wrapper header__wrapper_inside">
 			<div class="header__logo"><svg class="logo"><use xlink:href="#logo"/></svg></div>
 			<nav class="header__menu">
 				<a class="header__item" href ="index.html">Главная</a>
-				<a class="header__item" href ="catalog.html">Каталог приложений</a>
+				<a class="header__item active" href ="catalog.html">Каталог приложений</a>
 				<a class="header__item" href ="">О компании</a>
 			</nav>
 		</div>
@@ -19,8 +19,13 @@
 	<div class="menu-wrapper">
 		<nav class="menu">
 			<h2 class="menu__header menu__header_lined">Каталог приложений</h2>
-			<ul class="menu__list">
-				<li class="menu__item">
+			<ul id="menu-list" class="menu__list">
+				<template id="menu-template">
+					<li class="menu__item">
+						<a class="menu__link" href="#" onclick="getContentPackage(this.id); return false;"></a>
+					</li>
+				</template>
+				<!--<li class="menu__item">
 					<a class="menu__link" href="">Стандартный пакет</a>
 				</li>
 				<li class="menu__item">
@@ -61,11 +66,39 @@
 				</li>
 				<li class="menu__item">
 					<a class="menu__link" href="">Инвестиции</a>
-				</li>
+				</li>-->
 			</ul>
 		</nav>
 		<section class="content">
-			<div class="content__wrapper">
+			<div id = "content" class="content__wrapper">
+
+				<template id="content-template" class="template">
+					<div class="some"> 
+						<h1 class="content__header content__header_lined"></h1>
+						<div class="date"></div>
+						<div class="content__image">
+							<img width="251" height="188"><br>
+							<button class="button button_blue button_main">В корзину</button>
+						</div>
+						<ul class="content__list">
+							<li class="content__item"></li>
+							<li class="content__item"></li>
+							<li class="content__item"></li>
+							<li class="content__item"></li>
+						</ul>
+						<strong class="strong"></strong><p class="content__item content__item_inline"></p>
+						<div>
+							<h2 class="content__header content__header_lined">Основные функции</h2>
+							<ul class="content_list content__list_dot">
+								<li class="content__item content__item_dot"></li>
+								<li class="content__item content__item_dot"></li>
+								<li class="content__item content__item_dot"></li>
+							</ul>
+						</div>
+					</div>
+				</template>
+
+				<!--
 				<h1 class="content__header content__header_lined">Новый ЦФТ-банк</h1>
 				<div class="date">09 сентября 2016 года</div>
 				<div class="content__image">
@@ -87,6 +120,7 @@
 						<li class="content__item content__item_dot">Начисление баллов операционным сотрудникам за выполнение операций по банковским продуктам и отображение результатов в Едином окне (для использования гибкой настройки условий начисления баллов необходима лицензия на Приложение Игрофикация)</li>
 					</ul>
 				</div>
+			-->
 			</div>
 		</section>
 	</div>
@@ -99,5 +133,7 @@
 			</g>
 		</symbol>
 	</svg>
+	<script type="text/javascript" src="js/content.js"></script>
+	<!--<script type="module" src="js/module.js"></script>-->
 </body>
 </html>

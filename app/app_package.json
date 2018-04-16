@@ -1,0 +1,93 @@
+[
+ 	{
+ 		"id": 1,
+ 		"title": "Стандартный пакет",
+ 		"lastUpdate": 1333868877,
+ 		"guid": "hfjdsbjfisOJKMD-Njnjds2gsdsk76",
+ 		"href": ""
+ 	},
+ 	{
+ 		"id": 2,
+ 		"title": "Новый ЦФТ-банк",
+ 		"lastUpdate": 1473404877,
+ 		"guid": "hfjdsbjfisOJKMD-Njnnxt2gsdsk76"
+ 	},
+ 	{
+ 		"id": 3,
+ 		"title": "Каталог разработок",
+ 		"lastUpdate": 1425366477,
+ 		"guid": "hfjdsbkstsOJKMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 4,
+ 		"title": "Cash Management",
+ 		"lastUpdate": 1523689677,
+ 		"guid": "hfjdsbjfisOJKMD-Njnjdsjnv82h76"
+ 	},
+ 	{
+ 		"id": 5,
+ 		"title": "Аренда сейфов",
+ 		"lastUpdate": 1421936477,
+ 		"guid": "hfjdaldfisOJKMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 6,
+ 		"title": "Банковские гарантии",
+ 		"lastUpdate": 1223689677,
+ 		"guid": "hfjdsbjfisOJKMD-Njnjdsjmzbsk76"
+ 	},
+ 	{
+ 		"id": 7,
+ 		"title": "Казначейство",
+ 		"lastUpdate": 1132689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 8,
+ 		"title": "Страхование",
+ 		"lastUpdate": 1232739677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 9,
+ 		"title": "Факторинговое обслуживание",
+ 		"lastUpdate": 1432689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 10,
+ 		"title": "Переводы средств",
+ 		"lastUpdate": 1332689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 11,
+ 		"title": "Расчетный центр",
+ 		"lastUpdate": 1532689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 12,
+ 		"title": "Пластиковые карты",
+ 		"lastUpdate": 1532689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 13,
+ 		"title": "Финансовый мониторинг",
+ 		"lastUpdate": 1532689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 14,
+ 		"title": "Депозиты и вклады",
+ 		"lastUpdate": 1532689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	},
+ 	{
+ 		"id": 15,
+ 		"title": "Инвестиции",
+ 		"lastUpdate": 1532689677,
+ 		"guid": "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
+ 	}
+ ]
