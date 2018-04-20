@@ -1,4 +1,18 @@
 const parent = document.getElementById('slider-block');
+document.addEventListener("DOMContentLoaded", showCart);
+
+function showCart() {	
+	if (localStorage.length > 0) {
+		let sum = 0;
+	    for (let i = 0; i < localStorage.length; i++){
+	        sum += JSON.parse(localStorage.getItem(localStorage.key(i)));
+	    }
+	    
+		document.querySelector('.sticker-wrapper').className += ' sticker_checked';
+		document.querySelector('.amount').innerHTML = 'Итого: '.concat(localStorage.length, ' шт.');
+		document.querySelector('.item-sum').innerHTML = 'Сумма: '.concat(sum, ' руб.');
+	}
+}
 
 let imageBlock = [
  	block1 = {

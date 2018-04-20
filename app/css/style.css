@@ -22,11 +22,12 @@ body {
 }
 
 .background-wrapper {
-	width: 100%;
+	min-width: 100%;
 	min-height: 100%;
 	background-color: white;
 	position: absolute;
 	top: 0;
+	padding-bottom:50px;
 }
 
 .header {
@@ -37,14 +38,15 @@ body {
 }
 
 .header__wrapper {
-	width: 1200px;
+	width: 1170px;
 	margin: 0 auto;
+	/*padding-left: 150px;*/
 	position: relative;
 }
 
 .header__logo {
 	display: inline-block;
-	padding: 22px 45% 0 0;
+	padding: 22px 30% 0 0;
 }
 
 .logo {
@@ -73,6 +75,54 @@ body {
 
 .header__item:hover {
 	color: #ed1b2f;
+}
+
+.header__basket {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	
+}
+
+.sticker_wrapper {
+	width: 50px;
+	height: 20px;
+	/*position: absolute;
+	left: 95%;
+	bottom: 1%;*/
+	/* background-color: #1e8bc3;*/
+	text-align: center;
+	vertical-align: bottom;
+	color: black;
+	display: none;
+}
+
+.sticker_checked {
+	display: block;
+}
+
+.amount, .item-sum {
+	font-family: 'Arial', arial, sans-serif;
+	font-size: 12px;
+	width: 100px;
+}
+
+.amount {
+	position: absolute;
+	left: 100%;
+	bottom: 50%;
+}
+
+.item-sum {
+	position: absolute;
+	left: 100%;
+	bottom: 10%;
+}
+
+.basket-image {
+	width: 30px;
+	height: 30px;
+	position: relative;
 }
 
 .main {
@@ -361,6 +411,14 @@ body {
 	color: #f13843;
 	text-decoration: underline;
 }
+
+.price, .rouble {
+	font-family: 'Arial', arial, sans-serif;
+	font-size: 20px;
+	color: #79878e;
+	display: inline;
+}
+
 
 .active {
 	color: #f13843;
@@ -730,7 +788,7 @@ body {
 }
 
 .total-sum_padding-right_95 {
-	padding-right: 95px;
+	padding-right: 185px;
 }
 
 .counter {
@@ -758,6 +816,10 @@ body {
 	font-weight: 600;
 	vertical-align:9px;
 	color: #2c3239;
+	/*position: relative;*/
+	position: absolute;
+	top: 35%;
+	left: 45%;
 }
 
 .button_round {
@@ -766,7 +828,8 @@ body {
 	border-radius: 100px;
 	background-color: #ffffff;
 	border: solid 1px #e5e5e5;
-	position: relative;
+	/*position: relative;*/
+	position: absolute;
 	cursor: pointer;
 }
 
@@ -778,15 +841,24 @@ body {
 	left: 12px;
 }
 
+.button_round-left {
+	background: white url(../assets/image/minus.svg) no-repeat 50% 50%;
+}
+
+.button_round-right {
+	background: white url(../assets/image/plus.svg) no-repeat 50% 50%;
+	left: 70%;
+}
+
 .delete-button {
-	width: 14px;
-	height: 14px;
+	width: 13px;
+	height: 13px;
 	border-radius: 100%;
 	border: none;
 	display: inline-block;
 	margin-left: 15%;
 	cursor: pointer;
-	background-color: white;
+	background: white url(../assets/image/delete.svg) no-repeat center;
 }
 
 .delete {
