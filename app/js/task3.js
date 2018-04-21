@@ -1,45 +1,37 @@
-const parent = document.getElementById('slider-block');
-document.addEventListener("DOMContentLoaded", showCart);
+import {Cart} from './cart-module.js';
+import {Slider} from './slider-module.js';
 
-function showCart() {	
-	if (localStorage.length > 0) {
-		let sum = 0;
-	    for (let i = 0; i < localStorage.length; i++){
-	        sum += JSON.parse(localStorage.getItem(localStorage.key(i)));
-	    }
-	    
-		document.querySelector('.sticker-wrapper').className += ' sticker_checked';
-		document.querySelector('.amount').innerHTML = 'Итого: '.concat(localStorage.length, ' шт.');
-		document.querySelector('.item-sum').innerHTML = 'Сумма: '.concat(sum, ' руб.');
-	}
-}
+let cart = new Cart();
+let slider = new Slider(document.querySelector('.slider-block'), 362);
+
+document.addEventListener("DOMContentLoaded", cart.showCart);
 
 let imageBlock = [
- 	block1 = {
+ 	{
  		image: 'shot-1.jpg',
  		guid: "hfjdsbjfisOJKMD-Njnjds2gsdsk76"
  	},
- 	block1 = {
+ 	{
  		image: 'shot-2.jpg',
  		guid: "hfjdsbjfisOJKMD-Njnnxt2gsdsk76"
  	},
- 	block1 = {
+ 	{
  		image: 'shot-3.jpg',
  		guid: "hfjdsbkstsOJKMD-Njnjdsjnvdsk76"
  	},
- 	block1 = {
+ 	{
  		image: 'shot-4.jpg',
  		guid: "hfjdsbjfisOJKMD-Njnjdsjnv82h76"
  	},
- 	block1 = {
+ 	{
  		image: 'shot-5.jpg',
  		guid: "hfjdaldfisOJKMD-Njnjdsjnvdsk76"
  	},
- 	block1 = {
+ 	{
  		image: 'shot-6.jpg',
  		guid: "hfjdsbjfisOJKMD-Njnjdsjmzbsk76"
  	},
- 	block1 = {
+ 	{
  		image: 'shot-7.jpg',
  		guid: "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
  	}
@@ -49,7 +41,6 @@ function getPackage() {
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "app_package.json", true);
 	xhr.onload = env => {
-		//console.log(xhr.readyState);
 		if (xhr.readyState == 4) {
 			var package = xhr.responseText;
 			var restoredPackage = JSON.parse(package);

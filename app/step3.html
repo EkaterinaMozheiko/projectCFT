@@ -8,13 +8,13 @@
 <body>
 	<div class="background-wrapper">
 		<div class="basket-header">
-			<div class="circle">
+			<a class="circle circle_checked" href="step1.html">
 				<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
-			</div>
+			</a>
 			<div class="line"></div>
-			<div class="circle">
+			<a class="circle circle_checked" href="step2.html">
 				<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
-			</div>
+			</a>
 			<div class="line"></div>
 			<div class="circle circle_border_blue">3</div>
 			<div class="line line_gray"></div>
@@ -36,7 +36,7 @@
 				<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-1">Быстрая установка</label><br>
 				<input class="radio radio_enabled" name="basket-radio" id="radio-2" type="radio">
 				<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-2">Отложенная установка</label><br>
-				<button class="button button_blue radio-group_button">Отправить</button>
+				<button class="button button_blue radio-group_button" onclick="location.href='step4.html'">Отправить</button>
 			</div>
 		</div>
 	</div>

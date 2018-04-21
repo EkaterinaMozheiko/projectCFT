@@ -13,10 +13,9 @@ function getRow() {
 			xhr.open("GET", "app_content.json", true);
 			xhr.onload = function() {
 
-
 				let contentPackage = xhr.responseText,
-					restoredPackage = JSON.parse(contentPackage);
-					let cartTemplate = document.querySelector('#cart-template').content.cloneNode(true);
+					restoredPackage = JSON.parse(contentPackage),
+					cartTemplate = document.querySelector('#cart-template').content.cloneNode(true);
 
 					cartTemplate.appendChild(cartTemplate.querySelector('.basket-table__row'));
 					cartTemplate.querySelector('.basket-table__row').appendChild(cartTemplate.querySelector('.basket-table_cell-header'));

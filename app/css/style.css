@@ -654,6 +654,10 @@ body {
 	margin-right: -2px;
 }
 
+.circle_checked {
+	cursor: pointer;
+}
+
 .circle_border_blue {
 	border: solid 2px #1e8bc3;
 	background-color: rgba(0, 0, 0, 0);
