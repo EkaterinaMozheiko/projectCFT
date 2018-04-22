@@ -75,7 +75,6 @@ export class Slider {
 				console.log("ERROR! getImageBlock ");
 			} 
 		);
-
 	}
 
 	convertDate(unixTimestamp){

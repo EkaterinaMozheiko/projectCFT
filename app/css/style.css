@@ -875,6 +875,15 @@ body {
 	padding-left: 62%;
 }
 
+.sum_empty {
+	font-family: 'Arial', arial, sans-serif;
+	font-size: 26px;
+	width: 200px;
+	margin: 0 auto;
+	padding: 0;
+	color: #9fa3a7;
+}
+
 .total-sum_big {
 	font-family: 'Arial', arial, sans-serif;
 	font-size: 36px;

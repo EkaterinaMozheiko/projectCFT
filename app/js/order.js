@@ -1,8 +1,6 @@
-import {Order} from './order-module.js';
+import {Cart} from './cart-module.js';
 
-let order = new Order();
+let cart = new Cart();
 
-document.addEventListener("DOMContentLoaded", order.getRow);
-//document.querySelector('.button_round-left').addEventListener('check', minusItem);
-//document.querySelector('.button_round-right').addEventListener('check', plusItem);
+document.addEventListener("DOMContentLoaded", cart.getRow.bind(cart));
 

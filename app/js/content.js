@@ -10,3 +10,4 @@ document.addEventListener("DOMContentLoaded", sidebar.getSidebarPackage.bind(sid
 document.addEventListener("DOMContentLoaded", cart.showCart.bind(cart));
 document.addEventListener("DOMContentLoaded", content.getContentPackage.bind(content, 1));
 
+//localStorage.clear();

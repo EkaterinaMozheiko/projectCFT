@@ -31,6 +31,8 @@ export class Content {
 		let active = restoredPackage.filter(link => elemId+1 == link.id);
 		document.getElementById(active[0].id).className += ' active_lined';	
 
+		//console.log(elemId+1);
+
 		buttonCart.addEventListener("click", cart.addItem.bind(cart, elemId, restoredPackage));
 
 		const contentPage = document.getElementById('content');
