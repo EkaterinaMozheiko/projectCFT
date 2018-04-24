@@ -12,20 +12,16 @@ export class Cart {
 
 		asyncRequest("app_content.json").then(
 			result => {
-				let quantity = 0,
-			    	total = 0,
-			    	sum = 0;
+				let total = 0;
 
 				for (let i = 0; i < localStorage.length; i++) {
 		    		let key = localStorage.key(i);
-				    
-				 	total += (JSON.parse(localStorage.getItem(key)));
-					sum += (JSON.parse(localStorage.getItem(key)) * result[key].price); 
+				 	total += (JSON.parse(localStorage.getItem(key))); 
 				}
 
 				document.querySelector('.sticker-wrapper').className += ' sticker_checked';
 				document.querySelector('.amount').innerHTML = 'Итого: '.concat(total, ' шт.');
-				document.querySelector('.item-sum').innerHTML = 'Сумма: '.concat(sum, ' руб.');
+				document.querySelector('.item-sum').innerHTML = 'Сумма: '.concat(this.getSum(result), ' руб.');
 			},
 			error => {
 				console.log("ERROR showCart");
@@ -35,10 +31,7 @@ export class Cart {
 
 	addItem(id, restoredPackage) {
 		document.querySelector('.sticker-wrapper').className += ' sticker_checked';
-
-		let total = 0,
-			sum = 0,
-			quantity = 0;
+		let total = 0;
 
 		(localStorage.hasOwnProperty(id)) ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) + 1) : localStorage.setItem(id, 1);
 		this.showCart();
@@ -56,10 +49,13 @@ export class Cart {
 	};
 
 	showItems(restoredPackage) {
-		let parent = document.querySelector('.basket-table'),
-			totalSumTemplate = document.querySelector('#total-sum').content,
-			sum = 0;
+		if (this.getSum(restoredPackage) === 0) {
+			this.emptyCart();
+			return;
+		}
 
+		let parent = document.querySelector('.basket-table'),
+			totalSumTemplate = document.querySelector('#total-sum').content;
 
 		for (let i = 0; i < localStorage.length; i++) {
 			let cartTemplate = document.querySelector('#cart-template').content.cloneNode(true),
@@ -104,75 +100,57 @@ export class Cart {
 			cartTemplate.querySelector('.delete-button').addEventListener('click', this.deleteItem.bind(this, key, restoredPackage));
 
 			parent.appendChild(cartTemplate);
-
-			sum += (JSON.parse(localStorage.getItem(key)) * restoredPackage[key].price); 
 		    
 		}
-
-		if (localStorage.length != 0) {
-			totalSumTemplate.querySelector('.total-sum_big').innerHTML = ''.concat(sum, ' руб.');
-			document.querySelector('.sum').appendChild(totalSumTemplate);
-		}
+		
+		totalSumTemplate.querySelector('.total-sum_big').innerHTML = ''.concat(this.getSum(restoredPackage), ' руб.');
+		document.querySelector('.sum').appendChild(totalSumTemplate);
 	}
 
 	minusItem(id, restoredPackage) {
-		let quantity = 0,
-			sum = 0;
-		(localStorage.getItem(id) > 1) ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) - 1) : localStorage.setItem(id, 1);
+		let quantity = 0;
+		localStorage.getItem(id) > 1 ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) - 1) : localStorage.setItem(id, 1);
 
 		document.querySelector('.counter__label_' + id).innerHTML = JSON.parse(localStorage.getItem(id));
 		document.querySelector('.total-sum_last_' + id).innerHTML = ''.concat(restoredPackage[id].price * localStorage.getItem(id), ' руб.');
-		
-		/*localStorage.reduce(function(sum, current) {
-		  return sum + current;
-		  console.log(current);
-		}, 0);*/
-
-		for (let i = 0; i < localStorage.length; i++) {
-    		let key = localStorage.key(i);
-			sum += (JSON.parse(localStorage.getItem(key)) * restoredPackage[key].price); 
-		}
-
-		document.querySelector('.total-sum_big').innerHTML = ''.concat(sum, ' руб.');
+		document.querySelector('.total-sum_big').innerHTML = ''.concat(this.getSum(restoredPackage), ' руб.');
 
 	}
 	
 	plusItem(id, restoredPackage) {
-		let quantity = 0,
-			sum = 0;
+		let quantity = 0;
 		localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) + 1);
 
 		document.querySelector('.counter__label_' + id).innerHTML = JSON.parse(localStorage.getItem(id));
 		document.querySelector('.total-sum_last_' + id).innerHTML = ''.concat(restoredPackage[id].price * localStorage.getItem(id), ' руб.');
 
-		for (let i = 0; i < localStorage.length; i++) {
-    		let key = localStorage.key(i);
-			sum += (JSON.parse(localStorage.getItem(key)) * restoredPackage[key].price); 
-		}
+		this.getSum(restoredPackage);
 
-		document.querySelector('.total-sum_big').innerHTML = ''.concat(sum, ' руб.');
+		document.querySelector('.total-sum_big').innerHTML = ''.concat(this.getSum(restoredPackage), ' руб.');
 	}
 
 	deleteItem(id, restoredPackage) {
-		let sum = 0;
 		document.querySelector('.basket-table__row_' + id).parentNode.removeChild(document.querySelector('.basket-table__row_' + id));
 		localStorage.removeItem(id);
+		
+		this.getSum(restoredPackage) === 0 ? this.emptyCart() : document.querySelector('.total-sum_big').innerHTML = 
+																''.concat(this.getSum(restoredPackage), ' руб.');
+	}
 
+	getSum(restoredPackage) {
+		let sum = 0;
 		for (let i = 0; i < localStorage.length; i++) {
     		let key = localStorage.key(i);
 			sum += (JSON.parse(localStorage.getItem(key)) * restoredPackage[key].price); 
 		}
-
-		if (sum === 0) {
-			document.querySelector('.basket-table_header').parentNode.removeChild(document.querySelector('.basket-table_header'));
-			//document.querySelector('.sum').parentNode.removeChild(document.querySelector('.sum'));
-			document.querySelector('.sum').classList.add('sum_empty');
-			document.querySelector('.sum_empty').innerHTML = 'Корзина пуста :(';
-		}
-
-		else {
-			document.querySelector('.total-sum_big').innerHTML = ''.concat(sum, ' руб.');
-		}
-
+		return sum;
 	}
+
+	emptyCart() {
+		document.querySelector('.basket-wrapper').classList.add('sum_empty');
+		document.querySelector('.sum_empty').innerHTML = 'Корзина пуста :(';
+		document.querySelector('.sum').parentNode.removeChild(document.querySelector('.sum'));
+		return;
+	}
+
 }

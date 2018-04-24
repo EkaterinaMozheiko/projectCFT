@@ -28,21 +28,21 @@ export class Content {
 			listItem[i].innerText = restoredPackage[elemId]["contentItem".concat(i)];
 		}
 
-		let active = restoredPackage.filter(link => elemId+1 == link.id);
+		let active = restoredPackage.filter(link => elemId + 1 == link.id);
 		document.getElementById(active[0].id).className += ' active_lined';	
-
-		//console.log(elemId+1);
 
 		buttonCart.addEventListener("click", cart.addItem.bind(cart, elemId, restoredPackage));
 
 		const contentPage = document.getElementById('content');
 		let templateAmount = contentPage.children;
-		(templateAmount.length == 1)? contentPage.appendChild(contentTemplate) : contentPage.replaceChild(contentTemplate, contentPage.children[1]);	
+		(templateAmount.length == 1) ? contentPage.appendChild(contentTemplate) : contentPage.replaceChild(contentTemplate, 
+                                                                                                           contentPage.children[1]);	
 	}
 
 	getContentPackage(id) {
 		asyncRequest("app_content.json").then(
 			result => {
+				console.log("get");
 				this.getContent(result, id-1); //-1
 			},
 			error => {

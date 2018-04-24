@@ -7,6 +7,8 @@
 </head>
 <body>
 	<div class="background-wrapper">
+		<img class="image-loading" src="assets/imageTask3/loading.gif">
+		<div class="background-loading">
 		<div class="basket-header">
 			<a class="circle circle_checked" href="step1.html">
 				<svg class="icon-check_big"><use xlink:href="#checkmark"/></svg>
@@ -23,27 +25,29 @@
 		<div class="content-form">
 			<div class="input-form">
 				<div class="contact-header">Контактная информация</div>
-				<input class="input-field input-field_width_320" type="text" placeholder="Фамилия">
-				<input class="input-field input-field_width_301" type="text" placeholder="Имя Отчество"><br>
-				<input class="input-field input-field_width_320" type="text" placeholder="Номер телефона">
-				<input class="input-field input-field_width_301" type="text" placeholder="E-mail"> <br>
-				<input class="input-field input-field_width_207" type="text" placeholder="Организация">
-				<input class="input-field input-field_width_207" type="text" placeholder="ИНН">
-				<input class="input-field input-field_width_187" type="text" placeholder="Город">
+				<input id ="second-name" class="input-field input-field_width_320" type="text" placeholder="Фамилия">
+				<input id ="first-name" class="input-field input-field_width_301" type="text" placeholder="Имя Отчество"><br>
+				<input id ="telephone-number" class="input-field input-field_width_320" type="text" placeholder="Номер телефона">
+				<input id ="e-mail" class="input-field input-field_width_301" type="text" placeholder="E-mail"> <br>
+				<input id ="institution" class="input-field input-field_width_207" type="text" placeholder="Организация">
+				<input id ="ITN" class="input-field input-field_width_207" type="text" placeholder="ИНН">
+				<input id ="city" class="input-field input-field_width_187" type="text" placeholder="Город">
 			</div>
 			<div class="radio-group">
 				<input class="radio radio_enabled" name="basket-radio" id="radio-1" type="radio">
 				<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-1">Быстрая установка</label><br>
 				<input class="radio radio_enabled" name="basket-radio" id="radio-2" type="radio">
 				<label class="label label_enabled pseudo-radio pseudo-radio_enabled" for="radio-2">Отложенная установка</label><br>
-				<button class="button button_blue radio-group_button" onclick="location.href='step4.html'">Отправить</button>
+				<button class="button button_blue radio-group_button send">Отправить</button>
 			</div>
 		</div>
+	</div>
 	</div>
 	<svg xmlns="http://www.w3.org/2000/svg">
 		<symbol id="checkmark" viewBox="0 0 9 6">
 			<path fill-rule="evenodd" d="M8.32.251a.856.856 0 0 1 0 1.212L4.035 5.75a.855.855 0 0 1-1.212 0L.25 3.178a.856.856 0 1 1 1.212-1.212L3.43 3.93 7.109.25a.856.856 0 0 1 1.211 0z"/>
 		</symbol>
 	</svg>
+	<script type="module" src="js/payment.js"></script>
 </body>
 </html>

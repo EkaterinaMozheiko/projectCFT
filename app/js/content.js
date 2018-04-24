@@ -9,5 +9,3 @@ let content = new Content();
 document.addEventListener("DOMContentLoaded", sidebar.getSidebarPackage.bind(sidebar));
 document.addEventListener("DOMContentLoaded", cart.showCart.bind(cart));
 document.addEventListener("DOMContentLoaded", content.getContentPackage.bind(content, 1));
-
-//localStorage.clear();

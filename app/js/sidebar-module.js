@@ -5,7 +5,6 @@ let contentObject = new Content();
 
 export class Sidebar {
 	constructor() {
-		//localStorage.clear();
 	}
 
 	getSidebarPackage() {
