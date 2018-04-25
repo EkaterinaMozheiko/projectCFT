@@ -40,14 +40,11 @@ export class Content {
 	}
 
 	getContentPackage(id) {
-		asyncRequest("app_content.json").then(
-			result => {
-				console.log("get");
-				this.getContent(result, id-1); //-1
-			},
-			error => {
-				console.log("ERROR getContentPackage");
-			} 
+		asyncRequest("app_content.json")
+		.then(
+			result => this.getContent(result, id-1)
+		).catch (
+			error => console.log("ERROR getContentPackage")
 		);
 	}
 
