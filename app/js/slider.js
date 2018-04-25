@@ -19,4 +19,3 @@ document.querySelector('#dot5').addEventListener("click", slider.showImage.bind(
 document.querySelector('#dot6').addEventListener("click", slider.showImage.bind(slider, 1810));
 document.querySelector('#dot7').addEventListener("click", slider.showImage.bind(slider, 2172));
 
-//localStorage.clear();

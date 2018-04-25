@@ -26,13 +26,14 @@ export class Cart {
         .catch (
             error => console.log("ERROR showCart")
         )          
-    };
+    }
 
     addItem(id, restoredPackage) {
         document.querySelector('.sticker-wrapper').className += ' sticker_checked';
         let total = 0;
 
-        (localStorage.hasOwnProperty(id)) ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) + 1) : localStorage.setItem(id, 1);
+        localStorage.hasOwnProperty(id) ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) + 1) : 
+                                                                                    localStorage.setItem(id, 1);
         this.showCart();
     }
 

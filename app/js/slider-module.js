@@ -1,8 +1,6 @@
 import {asyncRequest} from './promise-module.js'
 import {Content} from './content-module.js'
 
-let content = new Content();
-
 let imageBlock = [
     {
         image: 'shot-1.jpg',
@@ -49,8 +47,10 @@ export class Slider {
             this.shift -= this.width;
             this.slider.style.left = this.shift + 'px';
         }
-        radio.previousElementSibling.checked = true;
-    };
+        if (document.querySelector('.main__slider-radio_form').firstChild != radio) {
+            radio.previousElementSibling.checked = true;
+        }
+    }
 
     sliderRight() {
         let radio = document.querySelector('input[name="dot"]:checked');
@@ -58,12 +58,14 @@ export class Slider {
             this.shift += this.width;
             this.slider.style.left = this.shift + 'px';
         }
-        radio.nextElementSibling.checked = true;
-    };
+        if (document.querySelector('.main__slider-radio_form').lastChild != radio) {
+            radio.nextElementSibling.checked = true;
+        }
+    }
 
     showImage(n) {
         this.slider.style.left = -Math.min(1448, n) + 'px'; 
-    };
+    }
 
     getPackage() {
         asyncRequest("app_package.json")
@@ -71,7 +73,7 @@ export class Slider {
             result => this.getImageBlock(result)
         ).catch (
             error => console.log("ERROR! getImageBlock ")
-        );
+        )
     }
 
     convertDate(unixTimestamp){
@@ -90,12 +92,13 @@ export class Slider {
             for (let j = 0; j < this.sliderElements; j++) {
                 if (restoredPackage[i].guid == imageBlock[j].guid) {
                     template.querySelector('.image_clicked').src = 'assets/imageTask3/' + imageBlock[j].image;
+                    
                     /*template.querySelector('.image_clicked').addEventListener("click", () => {
-                                                                                document.location.href = "new_cft_bank.html";
-                                                                                console.log(restoredPackage[i].id);
-                                                                                content.getContentPackage(restoredPackage[i].id);
-                                                                            });*/
+                        console.log(restoredPackage[i].id);
+                        content.getContentPackage(restoredPackage[i].id);
+                        document.location.href = "new_cft_bank.html";
                                                                                 
+                    });   */                                                   
                 }
             }
             let parent = document.querySelector('#slider-block');
