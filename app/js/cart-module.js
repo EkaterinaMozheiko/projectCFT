@@ -2,10 +2,11 @@ import {asyncRequest} from './promise-module.js'
 
 export class Cart {
     constructor() {
+
     }
 
     showCart() {    
-        if (localStorage.length <= 0) {
+        if (localStorage.length === 0) {
             return;
         }
 
@@ -13,7 +14,6 @@ export class Cart {
         .then(
             result => {
                 let total = 0;
-
                 for (let i = 0; i < localStorage.length; i++) {
                     let key = localStorage.key(i);
                     total += (JSON.parse(localStorage.getItem(key))); 
@@ -31,7 +31,6 @@ export class Cart {
     addItem(id, restoredPackage) {
         document.querySelector('.sticker-wrapper').className += ' sticker_checked';
         let total = 0;
-
         localStorage.hasOwnProperty(id) ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) + 1) : 
                                                                                     localStorage.setItem(id, 1);
         this.showCart();
@@ -52,7 +51,7 @@ export class Cart {
             return;
         }
 
-        let parent = document.querySelector('.basket-table'),
+        const parent = document.querySelector('.basket-table'),
             totalSumTemplate = document.querySelector('#total-sum').content;
 
         for (let i = 0; i < localStorage.length; i++) {
@@ -79,23 +78,27 @@ export class Cart {
             cartTemplate.querySelector('.value-wrapper').appendChild(cartTemplate.querySelector('.counter'));
             cartTemplate.querySelector('.counter').appendChild(cartTemplate.querySelector('.button_round-left'));
 
-            cartTemplate.querySelector('.button_round-left').addEventListener('click', this.minusItem.bind(this, key, restoredPackage));
+            cartTemplate.querySelector('.button_round-left').addEventListener('click', 
+                this.minusItem.bind(this, key, restoredPackage));
 
             cartTemplate.querySelector('.counter__label').innerHTML = JSON.parse(localStorage.getItem(key))
             cartTemplate.querySelector('.counter__label').classList.add('counter__label_' + key);
             cartTemplate.querySelector('.counter').appendChild(cartTemplate.querySelector('.counter__label'));
             cartTemplate.querySelector('.counter').appendChild(cartTemplate.querySelector('.button_round-right'));
 
-            cartTemplate.querySelector('.button_round-right').addEventListener('click', this.plusItem.bind(this, key, restoredPackage));
+            cartTemplate.querySelector('.button_round-right').addEventListener('click', 
+                this.plusItem.bind(this, key, restoredPackage));
             
             cartTemplate.querySelector('.basket-table__row').appendChild(cartTemplate.querySelector('.basket-table_cell-sum'));
 
-            cartTemplate.querySelector('.total-sum_last').innerHTML = ''.concat(JSON.parse(localStorage.getItem(key)) * restoredPackage[key].price, ' руб.');
+            cartTemplate.querySelector('.total-sum_last').innerHTML = ''.concat(JSON.parse(localStorage.getItem(key)) * 
+                restoredPackage[key].price, ' руб.');
             cartTemplate.querySelector('.total-sum_last').classList.add('total-sum_last_' + key);
             cartTemplate.querySelector('.basket-table_cell-sum').appendChild(cartTemplate.querySelector('.total-sum_last'));
             cartTemplate.querySelector('.basket-table_cell-sum').appendChild(cartTemplate.querySelector('.delete-button'));
 
-            cartTemplate.querySelector('.delete-button').addEventListener('click', this.deleteItem.bind(this, key, restoredPackage));
+            cartTemplate.querySelector('.delete-button').addEventListener('click', 
+                this.deleteItem.bind(this, key, restoredPackage));
 
             parent.appendChild(cartTemplate);
             
@@ -107,23 +110,23 @@ export class Cart {
 
     minusItem(id, restoredPackage) {
         let quantity = 0;
-        localStorage.getItem(id) > 1 ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) - 1) : localStorage.setItem(id, 1);
-
-        document.querySelector('.counter__label_' + id).innerHTML = JSON.parse(localStorage.getItem(id));
-        document.querySelector('.total-sum_last_' + id).innerHTML = ''.concat(restoredPackage[id].price * localStorage.getItem(id), ' руб.');
-        document.querySelector('.total-sum_big').innerHTML = ''.concat(this.getSum(restoredPackage), ' руб.');
+        localStorage.getItem(id) > 1 ? localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) - 1) : 
+                                        localStorage.setItem(id, 1);
+        this.changeSum(id, restoredPackage);
 
     }
     
     plusItem(id, restoredPackage) {
         let quantity = 0;
         localStorage.setItem(id, JSON.parse(localStorage.getItem(id)) + 1);
+        this.changeSum(id, restoredPackage);
 
+    }
+
+    changeSum(id, restoredPackage) {
         document.querySelector('.counter__label_' + id).innerHTML = JSON.parse(localStorage.getItem(id));
-        document.querySelector('.total-sum_last_' + id).innerHTML = ''.concat(restoredPackage[id].price * localStorage.getItem(id), ' руб.');
-
-        this.getSum(restoredPackage);
-
+        document.querySelector('.total-sum_last_' + id).innerHTML = ''.concat(restoredPackage[id].price * 
+            localStorage.getItem(id), ' руб.');
         document.querySelector('.total-sum_big').innerHTML = ''.concat(this.getSum(restoredPackage), ' руб.');
     }
 

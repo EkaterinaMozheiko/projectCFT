@@ -5,6 +5,7 @@ let contentObject = new Content();
 
 export class Sidebar {
     constructor() {
+        
     }
 
     getSidebarPackage() {

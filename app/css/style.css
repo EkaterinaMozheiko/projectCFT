@@ -53,11 +53,11 @@ body {
 	width: 145px;
 	height: 60px;
 }
-
+/*
 .image_clicked {
 	cursor: pointer;
 }
-
+*/
 .header__menu {
 	display: inline-block;
 	position: absolute;

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset = "UTF-8">
-	<title>Каталог - аренда сейфов</title>
+	<title>Каталог приложений</title>
 	<link rel = "stylesheet" href = "css/style.css" type="text/css">
 </head>
 <body>
@@ -11,172 +11,57 @@
 			<div class="header__logo"><svg class="logo"><use xlink:href="#logo"/></svg></div>
 			<nav class="header__menu">
 				<a class="header__item" href ="index.html">Главная</a>
-				<a class="header__item" href ="catalog.html">Каталог приложений</a>
+				<a class="header__item active" href ="catalog.html">Каталог приложений</a>
 				<a class="header__item" href ="">О компании</a>
+				<a href="step1.html" class="header__basket"><img class="basket-image" src="../assets/imageTask3/cart.png"></a>
+				<div class="sticker-wrapper">
+					<div class="amount"></div>
+					<div class="item-sum"></div>
+				</div>
 			</nav>
 		</div>
 	</header>
 	<div class="menu-wrapper">
 		<nav class="menu">
 			<h2 class="menu__header menu__header_lined">Каталог приложений</h2>
-			<ul id = "menu-list" class="menu__list">
+			<ul id="menu-list" class="menu__list">
 				<template id="menu-template">
 					<li class="menu__item">
-						<a class="menu__link" href=""></a>
+						<a class="menu__link" href="#" onclick="event.preventDefault()"></a>
 					</li>
 				</template>
-				<!--<li class="menu__item">
-					<a class="menu__link" href="">Стандартный пакет</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="new_cft_bank.html">Новый ЦФТ-банк</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Cash Management</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Аренда сейфов</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Банковские гарантии</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Казначейство</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Страхование</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Факторинговое обслуживание</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Переводы средств</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Расчетный центр</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Пластиковые карты</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Финансовый мониторинг</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Депозиты и вклады</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="">Инвестиции</a>
-				</li>-->
 			</ul>
 		</nav>
 		<section class="content">
-			<h1 class="content__header content__header_not-lined">Каталог - аренда сейфов</h1>
-			<table class="content__table">
-				<tr class="content__table-row">
-					<th class="content__table-item_header">Наименование</th>
-					<th class="content__table-item_header">Описание</th>
-					<th class="content__table-item_header">Стоимость <br> (тыс. у. е.)</th>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="../assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td>
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-				<tr class="content__table-row">
-					<td class="content__table-item">
-						<img class="table-image" src="assets/image/shot-2.jpg" width="80" height="60" alt="phone">
-						<a class="content__table-text" href="">Учет сейфовых ячеек</a><br>
-						<div class="content__table-date">09 сентября 2009 года</div>
-					</td >
-					<td class="content__table-item">
-						<p>Аналитический учет сейфовых ячеек<br> банка по подразделениям банка.</p>
-					</td>
-					<td class="content__table-item">4.99</td>
-				</tr>
-			</table>
+			<div id = "content" class="content__wrapper">
+
+				<template id="content-template" class="template">
+					<div class="some"> 
+						<h1 class="content__header content__header_lined"></h1>
+						<div class="date"></div>
+						<div class="content__image">
+							<img width="251" height="188"><br>
+							<button class="button button_blue button_main">В корзину</button>
+						</div>
+						<ul class="content__list">
+							<li class="content__item"></li>
+							<li class="content__item"></li>
+							<li class="content__item"></li>
+							<li class="content__item"></li>
+						</ul>
+						<strong class="strong"></strong><p class="content__item content__item_inline"></p><br>
+						<strong class="strong">Цена: </strong> <div class="price"></div> <div class="rouble"> руб</div>
+						<div>
+							<h2 class="content__header content__header_lined">Основные функции</h2>
+							<ul class="content_list content__list_dot">
+								<li class="content__item content__item_dot"></li>
+								<li class="content__item content__item_dot"></li>
+								<li class="content__item content__item_dot"></li>
+							</ul>
+						</div>
+					</div>
+				</template>
+			</div>
 		</section>
 	</div>
 	<svg xmlns="http://www.w3.org/2000/svg">
@@ -188,6 +73,6 @@
 			</g>
 		</symbol>
 	</svg>
-	<script type="text/javascript" src="js/content.js"></script>
+	<script type="module" src="js/content.js"></script>
 </body>
 </html>

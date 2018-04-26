@@ -1,36 +1,6 @@
 import {asyncRequest} from './promise-module.js'
 import {Content} from './content-module.js'
-
-let imageBlock = [
-    {
-        image: 'shot-1.jpg',
-        guid: "hfjdsbjfisOJKMD-Njnjds2gsdsk76"
-    },
-    {
-        image: 'shot-2.jpg',
-        guid: "hfjdsbjfisOJKMD-Njnnxt2gsdsk76"
-    },
-    {
-        image: 'shot-3.jpg',
-        guid: "hfjdsbkstsOJKMD-Njnjdsjnvdsk76"
-    },
-    {
-        image: 'shot-4.jpg',
-        guid: "hfjdsbjfisOJKMD-Njnjdsjnv82h76"
-    },
-    {
-        image: 'shot-5.jpg',
-        guid: "hfjdaldfisOJKMD-Njnjdsjnvdsk76"
-    },
-    {
-        image: 'shot-6.jpg',
-        guid: "hfjdsbjfisOJKMD-Njnjdsjmzbsk76"
-    },
-    {
-        image: 'shot-7.jpg',
-        guid: "hfjdsbjfis6jsMD-Njnjdsjnvdsk76"
-    }
- ];
+import {imageBlock} from './imageBlock-module.js'
 
 export class Slider {
     constructor(sliderElement, blockWidth) {
@@ -42,24 +12,24 @@ export class Slider {
     }
 
     sliderLeft() {
-        var radio = document.querySelector('input[name="dot"]:checked');
+        const controlDot = document.querySelector('input[name="dot"]:checked');
         if (this.shift >= -this.width * this.blocksInRow) {
             this.shift -= this.width;
             this.slider.style.left = this.shift + 'px';
         }
-        if (document.querySelector('.main__slider-radio_form').firstChild != radio) {
-            radio.previousElementSibling.checked = true;
+        if (document.querySelector('.main__slider-controlDot_form').firstChild != controlDot) {
+            controlDot.previousElementSibling.checked = true;
         }
     }
 
     sliderRight() {
-        let radio = document.querySelector('input[name="dot"]:checked');
+        const controlDot = document.querySelector('input[name="dot"]:checked');
         if (this.shift != 0) {
             this.shift += this.width;
             this.slider.style.left = this.shift + 'px';
         }
-        if (document.querySelector('.main__slider-radio_form').lastChild != radio) {
-            radio.nextElementSibling.checked = true;
+        if (document.querySelector('.main__slider-radio_form').lastChild != controlDot) {
+            controlDot.nextElementSibling.checked = true;
         }
     }
 
@@ -88,20 +58,13 @@ export class Slider {
 
     getImageBlock(restoredPackage) {
         for (let i = 0; i < this.sliderElements; i++) {
-            var template = document.querySelector('#my-template').content.cloneNode(true);
+            const template = document.querySelector('#my-template').content.cloneNode(true);
             for (let j = 0; j < this.sliderElements; j++) {
                 if (restoredPackage[i].guid == imageBlock[j].guid) {
-                    template.querySelector('.image_clicked').src = 'assets/imageTask3/' + imageBlock[j].image;
-                    
-                    /*template.querySelector('.image_clicked').addEventListener("click", () => {
-                        console.log(restoredPackage[i].id);
-                        content.getContentPackage(restoredPackage[i].id);
-                        document.location.href = "new_cft_bank.html";
-                                                                                
-                    });   */                                                   
+                    template.querySelector('.image_clicked').src = 'assets/imageTask3/' + imageBlock[j].image;                                               
                 }
             }
-            let parent = document.querySelector('#slider-block');
+            const parent = document.querySelector('#slider-block');
             template.querySelector('.main-logo__header').innerText = restoredPackage[i].title;
             template.querySelector('.date').innerText = this.convertDate(restoredPackage[i].lastUpdate);
             parent.appendChild(template);

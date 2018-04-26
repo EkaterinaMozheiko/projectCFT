@@ -1,5 +1,6 @@
 import {Cart} from './cart-module.js';
 import {asyncRequest} from './promise-module.js'
+
 let cart = new Cart();
 
 export class Content {
@@ -7,7 +8,7 @@ export class Content {
     }
 
     getContent(restoredPackage, elemId) {
-        let contentTemplate = document.querySelector('#content-template').content.cloneNode(true),
+        const contentTemplate = document.querySelector('#content-template').content.cloneNode(true),
         buttonCart = contentTemplate.querySelector('.button_blue');
 
         contentTemplate.querySelector('.content__header').innerText = restoredPackage[elemId].title;
@@ -35,7 +36,8 @@ export class Content {
         const contentPage = document.getElementById('content');
         let templateAmount = contentPage.children;
         (templateAmount.length == 1) ? contentPage.appendChild(contentTemplate) : contentPage.replaceChild(contentTemplate, 
-                                                                                                           contentPage.children[1]);    
+                                                                                                           contentPage.children[1]); 
+
     }
 
     getContentPackage(id) {
@@ -48,7 +50,7 @@ export class Content {
     }
 
     convertDate(unixTimestamp){
-     var months_arr = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
+     let months_arr = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
         date = new Date(unixTimestamp * 1000),
         year = date.getFullYear(),
         month = months_arr[date.getMonth()],
